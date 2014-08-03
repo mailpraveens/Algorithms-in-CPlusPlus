@@ -32,7 +32,7 @@ int findMaxSubArrayNoAdjacent( int a[], int n){
  */
 
 
-int findTripletsFromArray(int a[], int n, int total) {
+void findTripletsFromArray(int a[], int n, int total) {
     int i,left , right;
     i = 0;
     left = 0;
@@ -51,7 +51,41 @@ int findTripletsFromArray(int a[], int n, int total) {
             
         }
     }
+    return;
+}
+
+/*
+    Find occurances of a num in an array, this will use a helper function similar to binary search
+ */
+
+
+int countOccurancesOfElementInSortedArray(int a[], int num, int startIndex, int endIndex) {
     
+    if(startIndex > endIndex) {
+        return 0;
+    }
+    
+    if (a[startIndex] > num) {
+        // The smallest in the set is greater than num, so num doesn't exist
+        return 0;
+    }
+    
+    if (a[endIndex] < num) {
+        // The largest in the set is smaller than num, so num doesn't exist
+        return 0;
+    }
+    
+    int midIndex = (startIndex + endIndex) / 2;
+    
+    if (a[midIndex] == num) {
+        return 1 + countOccurancesOfElementInSortedArray(a, num, startIndex, midIndex - 1) + countOccurancesOfElementInSortedArray(a, num, midIndex + 1 , endIndex);
+    }
+    else if(a[midIndex] > num) {
+        //Search only left half
+        countOccurancesOfElementInSortedArray(a, num, startIndex, midIndex-1);
+    } else {
+        countOccurancesOfElementInSortedArray(a, num, midIndex + 1, endIndex);
+    }
     
     return 0;
 }

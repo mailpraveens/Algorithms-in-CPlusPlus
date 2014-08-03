@@ -79,6 +79,11 @@ void testSumOf3ArrayIndexes(){
 
 }
 
+void testOccurancesOfNumInSortedArray() {
+    int myNums[] = {1,1,2,2,2,2,2,2,3,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,7,8,9};
+    int endIndex = sizeof(myNums)/sizeof(int);
+    cout<<"Occurance of 6 in Array is " << countOccurancesOfElementInSortedArray(myNums, 6, 0, endIndex);
+}
 int main(int argc, const char * argv[])
 {
     printDelimiter();
@@ -88,6 +93,9 @@ int main(int argc, const char * argv[])
     printDelimiter();
     testSumOf3ArrayIndexes();
     printDelimiter();
+    testOccurancesOfNumInSortedArray();
+    printDelimiter();
+
     
         return 0;
 }

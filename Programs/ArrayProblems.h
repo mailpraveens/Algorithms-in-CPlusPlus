@@ -10,9 +10,11 @@
 #define __TestApps__ArrayProblems__
 
 #include <iostream>
+#include <vector>
 
 int findMaxSubArrayNoAdjacent( int * a, int n);
-int findTripletsFromArray(int a[], int n, int total);
+void findTripletsFromArray(int a[], int n, int total);
+int countOccurancesOfElementInSortedArray(int a[], int num, int startIndex, int endIndex) ;
 
 
 #endif /* defined(__TestApps__ArrayProblems__) */
