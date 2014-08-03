@@ -12,3 +12,5 @@ TestApps.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 *.plist
 
 *.1
+
+*.xccheckout
