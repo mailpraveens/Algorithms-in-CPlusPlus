@@ -1,0 +1,14 @@
+
+*.pbxproj
+
+TestApps.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+*.xcuserstate
+
+*.xcbkptlist
+
+*.xcscheme
+
+*.plist
+
+*.1
