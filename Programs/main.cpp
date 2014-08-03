@@ -34,6 +34,17 @@ char  * addStrings(char * str1, char * str2) {
     
 }
 
+void printDelimiter(){
+    cout<<endl;
+    cout<<endl;
+    for (int i =0 ; i < 15; i++) {
+        cout<<" * - * ";
+    }
+    cout<<endl;
+    cout<<endl;
+    
+}
+
 void testGraph() {
     Graph g(9);
     g.addEdge(0, 1);
@@ -52,8 +63,14 @@ void testGraph() {
     g.addEdge(6, 5);
     g.addEdge(7, 4);
     g.addEdge(8, 4);
-    cout << "Following is Depth First Traversal (starting from vertex 2) \n";
+    cout << "Following is breadth First Traversal (starting from vertex 2) \n";
     g.BFS();
+    printDelimiter();
+    cout << "Following is Depth First Traversal (starting from vertex 2) \n";
+    g.DFS();
+    printDelimiter();
+    cout << "Following is Check for Bipartiteness \n";
+    g.checkIfBipartite();
 
 }
 
@@ -62,16 +79,6 @@ void testMaxSubarrayNoAdjacent() {
     printf("%d",findMaxSubArrayNoAdjacent(arr, 5));
 }
 
-void printDelimiter(){
-    cout<<endl;
-    cout<<endl;
-    for (int i =0 ; i < 15; i++) {
-        cout<<" * - * ";
-    }
-    cout<<endl;
-    cout<<endl;
-    
-}
 
 void testSumOf3ArrayIndexes(){
     int arr[] = { 2,5,6,7,8, 9, 10};

@@ -24,6 +24,7 @@ public:
     void addEdge(int V, int w);
     void DFS();    // prints DFS traversal of the complete graph
     void BFS();
+    bool checkIfBipartite();
     
 };
 #endif /* defined(__TestApps__Graph__) */

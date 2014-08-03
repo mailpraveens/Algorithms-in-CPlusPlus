@@ -74,7 +74,41 @@ void Graph::BFS(){
     }   
 }
 
-
+bool Graph::checkIfBipartite() {
+    int *color = new int[V];
+    for (int i= 0; i < V; i++) {
+        color[i] = -1;
+    }
+    bool * visited = new bool[V];
+    for(int i = 0; i < V; i++)
+        visited[i] = false;
+    queue <int> myQueue;
+    
+    if (visited[0] == false) {
+        myQueue.push(0); // Push the inital vertice
+        visited[0] = true;
+        color[0] = 1;
+        while (!myQueue.empty()) {
+            list<int>:: iterator it;
+            int node = myQueue.front();
+            myQueue.pop();
+            for (it = adj[node].begin(); it != adj[node].end(); it++) {
+                if (!visited[*it] && color[*it] == -1) {
+                    color[*it] = abs(1 - color[node]);
+                    visited[*it] = true;
+                    myQueue.push(*it);
+                    
+                } else if(color[*it] == color[node]) {
+                    cout<< "Not Bipartite" << endl;
+                    return false;
+                }
+            }
+        }
+    }
+    cout<<"Bipartite" << endl;
+    return true;
+    
+}
 
 
 
