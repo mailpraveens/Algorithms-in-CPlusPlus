@@ -6,6 +6,7 @@
 using namespace std;
 #include "Graph.h"
 #include "ArrayProblems.h"
+#include "Marbles.h"
 
 
 
@@ -91,7 +92,14 @@ void testOccurancesOfNumInSortedArray() {
     int endIndex = sizeof(myNums)/sizeof(int);
     cout<<"Occurance of 6 in Array is " << countOccurancesOfElementInSortedArray(myNums, 6, 0, endIndex);
 }
-int main(int argc, const char * argv[])
+
+void testCombinationMarbles(){
+    cout<<"10 10 " << findCombinations(10, 10) << endl;
+    cout<<"30 7 " << findCombinations(30, 7) << endl;
+    
+    
+}
+/*int main(int argc, const char * argv[])
 {
     printDelimiter();
     testGraph();
@@ -102,8 +110,10 @@ int main(int argc, const char * argv[])
     printDelimiter();
     testOccurancesOfNumInSortedArray();
     printDelimiter();
-
+    testCombinationMarbles();
+    printDelimiter();
+    
     
         return 0;
 }
-
+*/
