@@ -152,7 +152,8 @@ void testStringFunctions(){
     char str[] = "geeksforgeeks";
     cout << "The inplace removal of duplicates is :"<< removeDuplicates(str)<< endl;
 }
-int main(int argc, const char * argv[])
+
+int main2(int argc, const char * argv[])
 {
     printDelimiter();
     testGraph();
@@ -169,7 +170,6 @@ int main(int argc, const char * argv[])
     printDelimiter();
     testStringFunctions();
     printDelimiter();
-
         return 0;
 }
 
