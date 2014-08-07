@@ -25,6 +25,9 @@ public:
     void DFS();    // prints DFS traversal of the complete graph
     void BFS();
     bool checkIfBipartite();
+    bool isSC(); // Is strongly connected
+    bool isEularianCycle();
+    Graph getTranspose();
     
 };
 #endif /* defined(__TestApps__Graph__) */

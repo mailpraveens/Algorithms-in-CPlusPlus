@@ -110,6 +110,54 @@ bool Graph::checkIfBipartite() {
     
 }
 
+Graph Graph::getTranspose(){
+    Graph G(V);
+    for (int i = 0 ; i < V ; i++) {
+        list<int>:: iterator it;
+        for (it = adj[i].begin(); it != adj[i].end(); it++) {
+            G.adj[*it].push_back(i);
+        }
+    }
+    
+    return G;
+}
+
+bool Graph::isEularianCycle() {
+    
+    return true;
+}
+
+bool Graph::isSC() {
+    bool visited[V];
+    for (int i = 0; i < V; i++) {
+        visited[i] = false;
+    }
+    
+    int n;
+    for (n = 0; n < V; n++)
+        if (adj[n].size() > 0)
+            break;
+    DFSUtil(n, visited);
+
+    
+    for (int i = 0; i < V; i++)
+        if (adj[i].size() > 0 && visited[i] == false)
+            return false;
+
+    Graph gr = getTranspose();
+
+    for (int i = 0; i < V; i++)
+        visited[i] = false;
+    
+    gr.DFSUtil(n, visited);
+    
+
+    for (int i = 0; i < V; i++)
+        if (adj[i].size() > 0 && visited[i] == false)
+            return false;
+    
+    return true;
+}
 
 
 
