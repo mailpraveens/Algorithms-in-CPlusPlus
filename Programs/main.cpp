@@ -8,6 +8,7 @@ using namespace std;
 #include "ArrayProblems.h"
 #include "Marbles.h"
 #include "BinaryTree.h"
+#include "Strings.h"
 
 
 
@@ -73,6 +74,9 @@ void testGraph() {
     printDelimiter();
     cout << "Following is Check for Bipartiteness \n";
     g.checkIfBipartite();
+    printDelimiter();
+    cout<<"The Topological sort is as follows:"<<endl;
+    g.topologicalSorting();
 
 }
 
@@ -144,6 +148,10 @@ void testBinaryTreeMethods(){
     BinaryTree::allTraversals(root);
 }
 
+void testStringFunctions(){
+    char str[] = "geeksforgeeks";
+    cout << "The inplace removal of duplicates is :"<< removeDuplicates(str)<< endl;
+}
 int main(int argc, const char * argv[])
 {
     printDelimiter();
@@ -159,7 +167,9 @@ int main(int argc, const char * argv[])
     printDelimiter();
     testBinaryTreeMethods();
     printDelimiter();
-    
+    testStringFunctions();
+    printDelimiter();
+
         return 0;
 }
 
