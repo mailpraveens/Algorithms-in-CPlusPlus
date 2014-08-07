@@ -7,6 +7,7 @@ using namespace std;
 #include "Graph.h"
 #include "ArrayProblems.h"
 #include "Marbles.h"
+#include "BinaryTree.h"
 
 
 
@@ -99,7 +100,33 @@ void testCombinationMarbles(){
     
     
 }
-/*int main(int argc, const char * argv[])
+
+void testBinaryTreeMethods(){
+    node * root = BinaryTree::getNewNode(5);
+    root->left = BinaryTree::getNewNode(3);
+    root->right = BinaryTree::getNewNode(7);
+    root->left->left = BinaryTree::getNewNode(2);
+    root->left->right = BinaryTree::getNewNode(4);
+    root->right->left = BinaryTree::getNewNode(6);
+    root->right->right = BinaryTree::getNewNode(8);
+    
+    node * child = BinaryTree::getParent(root, 3);
+    
+    
+    cout<< child->data << endl;
+    
+    printDelimiter();
+    
+    if (BinaryTree::isBST(root)) {
+        cout<<" Is a BST" << endl;
+    } else {
+        cout<<" Not a BST" << endl;
+    }
+    printDelimiter();
+
+}
+
+int main(int argc, const char * argv[])
 {
     printDelimiter();
     testGraph();
@@ -112,8 +139,9 @@ void testCombinationMarbles(){
     printDelimiter();
     testCombinationMarbles();
     printDelimiter();
-    
+    testBinaryTreeMethods();
+    printDelimiter();
     
         return 0;
 }
-*/
+

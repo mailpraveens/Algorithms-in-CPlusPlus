@@ -25,7 +25,7 @@ long long findCombinations(int n, int m) {
     
     return result;
 }
-
+/*
 int main() {
 	int tests;
 	cin>>tests;
@@ -35,4 +35,4 @@ int main() {
 		cout << findCombinations(n,m)<< endl;
 		tests--;
 	}
-}
+}*/
