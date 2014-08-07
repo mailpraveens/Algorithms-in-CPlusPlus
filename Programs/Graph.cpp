@@ -124,6 +124,12 @@ Graph Graph::getTranspose(){
 }
 
 bool Graph::isEularianCycle() {
+    if (!isSC()) {
+        return false;
+    }
+    
+    // Finally check the in and out degrees and figure out if Eularian cycle exists
+    
     
     return true;
 }
@@ -160,7 +166,8 @@ bool Graph::isSC() {
     return true;
 }
 
-void Graph::topologicalSortingUtil(int n, bool * visited, stack<int> s) {
+void Graph::topologicalSortingUtil(int n, bool * visited, stack<int> &s) {
+    visited[n] = true;
     list<int>:: iterator it;
     for (it = adj[n].begin(); it != adj[n].end(); it++) {
         if (!visited[*it]) {
@@ -185,6 +192,11 @@ void Graph::topologicalSorting() {
         }
     }
     
+    // Once stack is populated
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
 }
 
 

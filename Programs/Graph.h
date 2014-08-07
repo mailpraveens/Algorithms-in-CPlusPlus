@@ -30,7 +30,7 @@ public:
     bool isEularianCycle();
     Graph getTranspose();
     void topologicalSorting();
-    void topologicalSortingUtil(int n, bool * visited, stack<int> s);
+    void topologicalSortingUtil(int n, bool * visited, stack<int> &s);
     
 };
 #endif /* defined(__TestApps__Graph__) */
