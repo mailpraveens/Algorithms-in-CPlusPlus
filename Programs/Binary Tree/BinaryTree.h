@@ -28,6 +28,11 @@ public:
     static bool isBST(node * root);
     static node * getParent(node * root, int data);
     static node * getNewNode(int data);
+    static node * findLCA(node * root ,int node1, int node2);
+    static int  findRangeSum(node * root, int min, int max);
+    static bool hasPathSum(node * root, int sum);
+    static void printAllPaths(node * root);
+    static void allTraversals(node * root);
 };
 
 #endif /* defined(__TestApps__BinaryTree__) */

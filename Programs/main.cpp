@@ -113,7 +113,7 @@ void testBinaryTreeMethods(){
     node * child = BinaryTree::getParent(root, 3);
     
     
-    cout<< child->data << endl;
+    cout<<"Parent of the given node is : " <<child->data << endl;
     
     printDelimiter();
     
@@ -123,7 +123,25 @@ void testBinaryTreeMethods(){
         cout<<" Not a BST" << endl;
     }
     printDelimiter();
-
+    
+    node * lca = BinaryTree::findLCA(root, 8, 2);
+    if (lca) {
+        cout<<"LCA is : "<< lca->data <<endl;
+    } else {
+        cout<<" Not found "<<endl;
+    }
+    printDelimiter();
+    cout<<"Range sum is ::"<< BinaryTree::findRangeSum(root, 8, 10) << endl;
+    
+    printDelimiter();
+    cout<<"Has path sum is ::"<< BinaryTree::hasPathSum(root, 10) << endl;
+    
+    printDelimiter();
+    cout<<"All Paths are:"<< endl;
+    BinaryTree::printAllPaths(root);
+    
+    cout<<"All Traversals are:"<< endl;
+    BinaryTree::allTraversals(root);
 }
 
 int main(int argc, const char * argv[])
