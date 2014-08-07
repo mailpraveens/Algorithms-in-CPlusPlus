@@ -11,6 +11,7 @@
 
 #include<iostream>
 #include <list>
+#include <stack>
 using namespace std;
 
 class Graph {
@@ -28,6 +29,8 @@ public:
     bool isSC(); // Is strongly connected
     bool isEularianCycle();
     Graph getTranspose();
+    void topologicalSorting();
+    void topologicalSortingUtil(int n, bool * visited, stack<int> s);
     
 };
 #endif /* defined(__TestApps__Graph__) */

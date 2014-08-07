@@ -9,6 +9,7 @@
 #include "Graph.h"
 using namespace std;
 #include <queue>
+#include <stack>
 
 
 Graph::Graph(int V){
@@ -159,5 +160,31 @@ bool Graph::isSC() {
     return true;
 }
 
+void Graph::topologicalSortingUtil(int n, bool * visited, stack<int> s) {
+    list<int>:: iterator it;
+    for (it = adj[n].begin(); it != adj[n].end(); it++) {
+        if (!visited[*it]) {
+            topologicalSortingUtil(*it, visited, s);
+        }
+    }
+    s.push(n);// Add it only after all vertices are processed
+}
+
+void Graph::topologicalSorting() {
+    
+    stack<int> s;
+    bool visited[V];
+    for (int i = 0; i < V; i++) {
+        visited[i] = false;
+    }
+    // Call Util function which will populate the Stack based on DFS traversal,
+    // Only after all the nodes adjacent are processed
+    for (int i = 0; i < V ; i++) {
+        if (!visited[i]) {
+            topologicalSortingUtil(i, visited, s);
+        }
+    }
+    
+}
 
 
