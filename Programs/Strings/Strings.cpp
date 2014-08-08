@@ -96,4 +96,33 @@ void countDecodings( const char * input) {
  Check if given string is a rotation of a palindrome
  
  */
+
+/*
+ Find all permutations of a string
+*/
+
+void recPermute(string soFar, string remaining) {
+    if(remaining == "") {
+        cout << soFar << endl;
+        return;
+    }
     
+    for (int i = 0; i < remaining.length(); i++) {
+        string next = soFar + remaining[i];
+        string rest = remaining.substr(0,i) + remaining.substr(i+1);
+        recPermute(next, rest);
+    }
+}
+
+
+void allSubsets(string soFar, string remaining) {
+    if (remaining == "") {
+        cout << soFar << endl;
+        return;
+    }
+    // Either include the next element or ignore next element
+    allSubsets(soFar + remaining[0], remaining.substr(1));
+    allSubsets(soFar, remaining.substr(1));
+    
+}
+

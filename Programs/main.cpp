@@ -161,6 +161,14 @@ void testStringFunctions(){
     countDecodings("3456");
     countDecodings("9879");
     
+    printDelimiter();
+    cout<< " All permutations are :" <<endl;
+    recPermute("", "abcd");
+    printDelimiter();
+    cout<< " All subsets are :" <<endl;
+    string input = "abcd";
+    allSubsets("", input);
+    
 }
 
 int main(int argc, const char * argv[])
