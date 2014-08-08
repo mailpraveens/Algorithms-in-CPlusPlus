@@ -8,6 +8,7 @@
 
 #include "RodCutting.h"
 using namespace std;
+int solution[100];
 
 //int max(int a, int b) { return (a > b)? a : b;}
 
@@ -30,23 +31,40 @@ int rodCuttingDynamicProg(vector<int> & price , int n) {
     int dp[n+1];
     dp[0] = 0;
     int max_val ;
-    
+    solution[0] = 0;
+    cout<< "solution[" << "0" << "] = " << solution[0] << endl;
+
     for (int i = 1; i <= n; i++) {
         max_val = -1;
         for (int j = 0; j < i ; j++) {
-            max_val = max(max_val, price[j] + dp[i-j-1]);
+            //max_val = max(max_val, price[j] + dp[i-j-1]);
+            
+            if (max_val < price[j] + dp[i-j-1]) {
+                max_val = price[j] + dp[i-j-1];
+                solution[i] = j;
+            }
+            // If we store the value of j when the  max changes then we can get the solution
+            
         }
+        cout<< "solution[" << i << "] = " << solution[i] << endl;
         dp[i] = max_val;
-        cout<< "Price at cutting at "<< i << "is :" << dp[i] <<endl;
     }
     
     return dp[n];
 }
 
+void printSolution(int n) {
+    do {
+        cout<< solution[n];
+    } while((n -= solution[n]) > 0);
+}
 
-int main3() {
+
+int main() {
     vector<int> price = {1, 5, 8, 9, 10, 17, 17, 20};
     cout<<"The Recursive solution is " << rodCuttingRecursive(price, 8)<< endl;
     cout<<"The Dynamic Programming solution is " << rodCuttingDynamicProg(price, 8)<< endl;
+    cout<<"The Dynamic Programming solution set is :" << endl;
+    //printSolution(8);
     return 0;
 }
