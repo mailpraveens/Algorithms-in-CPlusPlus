@@ -12,5 +12,5 @@
 #include <iostream>
 
 char * removeDuplicates(char * s);
-
+char * getExcelColumnName( int num);
 #endif /* defined(__TestApps__Strings__) */
