@@ -70,10 +70,9 @@ int LittleElephantAndBallsAgain::getCount(){
     
 }
 
-
-int main()
-{
+/*
+int main(){
 	LittleElephantAndBallsAgain ele;
     ele.input = "RGGGGGBBB";
 	std::cout << ele.getCount() << "\n";
-}
+}*/
