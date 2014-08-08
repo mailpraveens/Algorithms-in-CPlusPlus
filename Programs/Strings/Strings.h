@@ -13,4 +13,5 @@
 
 char * removeDuplicates(char * s);
 char * getExcelColumnName( int num);
+void countDecodings( const char * input);
 #endif /* defined(__TestApps__Strings__) */

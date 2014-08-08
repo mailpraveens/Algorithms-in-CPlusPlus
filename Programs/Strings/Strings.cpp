@@ -66,4 +66,34 @@ char * getExcelColumnName( int num){
     cout<< strrev(str) << endl;
     return ":";
 }
+
+/*Program to find the number of decodings of a particular sequence
+  1234 --> can be decoded into 12, 3,4 as alphabet numbers
+ or 1,23,4 or 1,2,3,4 -- Total 3
+ */
+
+// Dynamic programming
+void countDecodings( const char * input) {
+    int n = (int)strlen(input);
+    int count[n+1];
+    count[0] = 1; //Null String
+    count[1] = 1;// The given number is the only sequence
+    for (int i = 2 ; i <= n ; i++) {
+        count[i] = 0;
+        //Check if last number is 0, it doesnt add to the count
+        if (input[i-1] > '0') {
+            count[i] = count[i-1];
+        }
+        // Now check if i-2 and i-1 is between 2 and 7 then add to count
+        if (input[i-2] < '2' || (input[i-2] == '2' && input[i-1] < '7')) {
+            count[i] += count[i-2];
+        }
+    }
+    cout<<"Total decodings of "<< input <<" are : "<< count[n]<< endl;
+}
+
+/*
+ Check if given string is a rotation of a palindrome
+ 
+ */
     

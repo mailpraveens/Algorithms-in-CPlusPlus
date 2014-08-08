@@ -155,7 +155,12 @@ void testStringFunctions(){
     cout << "The Excel Column Conversion is :"<< getExcelColumnName(26)<< endl;
     cout << "The Excel Column Conversion is :"<< getExcelColumnName(702)<< endl;
     cout << "The Excel Column Conversion is :"<< getExcelColumnName(705)<< endl;
-
+    printDelimiter();
+    countDecodings("1234");
+    countDecodings("121");
+    countDecodings("3456");
+    countDecodings("9879");
+    
 }
 
 int main(int argc, const char * argv[])
@@ -175,6 +180,6 @@ int main(int argc, const char * argv[])
     printDelimiter();
     testStringFunctions();
     printDelimiter();
-        return 0;
+    return 0;
 }
 
