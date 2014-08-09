@@ -33,6 +33,12 @@ public:
     static bool hasPathSum(node * root, int sum);
     static void printAllPaths(node * root);
     static void allTraversals(node * root);
+    static bool isBalanced(node * root);
+    static int getHeight(node * root);
+    static node * createBSTFromArray(int *arr, int n);
+    static int createLevelOrderLinkedList(node * root);
+    static int inOrderSuccesor(node * root, int data);
+    static bool checkIfOneTreeExistsinOther(node * tree1, node * tree2);
 };
 
 #endif /* defined(__TestApps__BinaryTree__) */

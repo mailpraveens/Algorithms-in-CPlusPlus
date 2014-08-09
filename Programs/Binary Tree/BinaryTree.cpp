@@ -180,5 +180,117 @@ void BinaryTree::allTraversals(node * root) {
     levelOrderTraversal(root);
 }
 
+int checkHeight( node * root) {
+    if (root == NULL) {
+        return 0;
+    }
+    int leftHeight = checkHeight(root->left);
+    if (leftHeight == -1) {
+        return -1;
+    }
+    int rightHeight = checkHeight(root->right);
+    if (rightHeight == -1) {
+        return -1;
+    }
+    int heightDiff = leftHeight - rightHeight;
+    if (abs(heightDiff) > 1) {
+        return -1;
+    } else {
+        return std::max(leftHeight, rightHeight) + 1;
+    }
+    
+}
+
+
+bool BinaryTree::isBalanced(node * root) {
+    if (checkHeight(root) == -1) {
+        return false;
+    } else{
+        return true;
+    }
+}
+
+node * createBSTFromArrayHelper(int * arr, int low, int high) {
+    if (high < low) {
+        return NULL;
+    }
+    int mid = (low + high )/ 2;
+    node * node = BinaryTree::getNewNode(arr[mid]);
+    node->left = createBSTFromArrayHelper(arr, low, mid-1);
+    node->right = createBSTFromArrayHelper(arr, mid+1, high);
+    
+    return node;
+}
+
+node * BinaryTree::createBSTFromArray(int * arr, int n) {    
+    return createBSTFromArrayHelper(arr, 0, n-1);
+}
+
+node * findNodeInTree(node * root, int data){
+    if (!root) {
+        return NULL;
+    }
+    if (root->data == data) {
+        return root;
+    }
+    node * left = findNodeInTree(root->left, data);
+    if (!left) {
+        return findNodeInTree(root->right, data);
+    }
+    return NULL;
+}
+
+int BinaryTree::inOrderSuccesor(node * root, int data) {
+    node * curr = findNodeInTree(root, data);
+    
+    if (curr->right) {
+        // Find left most node in this
+    } else{
+        node * successor = NULL;
+        node * ancestor = root;
+        while (ancestor != curr) {
+            if (curr->data  < ancestor ->data) {
+                successor = ancestor;
+                ancestor = ancestor->left;
+            }
+            else
+                ancestor = ancestor->right;
+        }
+    }
+    
+    return 0;
+}
+
+bool matchTree(node * tree1, node * tree2){
+    if (tree1 == NULL && tree2 == NULL) {
+        return true;
+    }
+    if (tree1 == NULL || tree2 == NULL) {
+        return false;
+    }
+    if (tree1->data == tree2->data) {
+        return matchTree(tree1->left, tree2->left) && matchTree(tree1->left, tree2->left);
+    }
+    return false;
+}
+
+bool findSubtree(node * tree1, node * tree2) {
+    if (tree1 == NULL) {
+        return false;
+    }
+    if (tree1->data == tree2->data) {
+        return matchTree(tree1, tree2);
+    }
+    return matchTree(tree1->left, tree2) || matchTree(tree1->right, tree2);
+}
+
+bool BinaryTree::checkIfOneTreeExistsinOther(node * tree1, node * tree2) {
+    if (tree2 == NULL) {
+        return true; // Null tree is also a subtree
+    }
+    
+    
+    return false;
+}
 
 
