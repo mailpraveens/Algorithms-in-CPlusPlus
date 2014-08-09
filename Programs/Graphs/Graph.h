@@ -31,6 +31,7 @@ public:
     Graph getTranspose();
     void topologicalSorting();
     void topologicalSortingUtil(int n, bool * visited, stack<int> &s);
+    bool checkRouteExistsBetweenNodes(int s, int d);
     
 };
 #endif /* defined(__TestApps__Graph__) */

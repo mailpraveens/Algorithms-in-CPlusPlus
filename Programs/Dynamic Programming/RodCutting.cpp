@@ -60,7 +60,7 @@ void printSolution(int n) {
 }
 
 
-int main() {
+int main5() {
     vector<int> price = {1, 5, 8, 9, 10, 17, 17, 20};
     cout<<"The Recursive solution is " << rodCuttingRecursive(price, 8)<< endl;
     cout<<"The Dynamic Programming solution is " << rodCuttingDynamicProg(price, 8)<< endl;

@@ -169,9 +169,13 @@ void testStringFunctions(){
     string input = "abcd";
     allSubsets("", input);
     
+    printDelimiter();
+    int number[] = {8,4,6,2};
+    allCombinationsOfKeyPad(number, 4);
+    
 }
 
-int main3(int argc, const char * argv[])
+int main(int argc, const char * argv[])
 {
     printDelimiter();
     testGraph();
