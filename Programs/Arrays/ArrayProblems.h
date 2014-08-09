@@ -15,6 +15,6 @@
 int findMaxSubArrayNoAdjacent( int * a, int n);
 void findTripletsFromArray(int a[], int n, int total);
 int countOccurancesOfElementInSortedArray(int a[], int num, int startIndex, int endIndex) ;
-
+void allCombinationsOfKeyPad(int *num, int n);
 
 #endif /* defined(__TestApps__ArrayProblems__) */

@@ -89,3 +89,25 @@ int countOccurancesOfElementInSortedArray(int a[], int num, int startIndex, int 
     
     return 0;
 }
+// All possible values for key press combination
+char hashtable[10] [5] = { "", "",  "abc" ,"def" , "ghi", "jkl","mno", "pqrs", "tuv", "wxyz" };
+void allCombinationsOfKeyPadUtil( int * num, int current, int total, char * result) {
+    if (current == total) {
+        cout << result << endl;
+        return;
+    }
+    for (int i = 0 ; i < strlen(hashtable[num[current]]); i++) {
+        result[current] =  hashtable[num[current]] [i];
+        allCombinationsOfKeyPadUtil(num, current + 1, total, result);
+    }
+}
+
+
+
+void allCombinationsOfKeyPad(int *num, int n) {
+    char  results[n+1];
+    results[n] = '\0';
+    allCombinationsOfKeyPadUtil(num, 0, n, results);
+}
+
+
