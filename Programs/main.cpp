@@ -175,7 +175,7 @@ void testStringFunctions(){
     
 }
 
-int main(int argc, const char * argv[])
+int main7(int argc, const char * argv[])
 {
     printDelimiter();
     testGraph();

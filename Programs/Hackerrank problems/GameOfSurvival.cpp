@@ -11,11 +11,11 @@
 using namespace std;
 #include <stdlib.h>     /* qsort */
 
-int compare (const void * a, const void * b) {
+int compareint(const void * a, const void * b) {
     return ( *(int*)a - *(int*)b );
 }
 
-int main()
+int main3()
 {
     int testcases;
     cin >> testcases;
@@ -30,9 +30,9 @@ int main()
     	for(int i = 0; i < n ; i++){
     		cin >> anistrength[i];
     	}
-    	qsort (anistrength, n, sizeof(int), compare);
+    	qsort (anistrength, n, sizeof(int), compareint);
         
-    	qsort (swordPower, n, sizeof(int), compare);
+    	qsort (swordPower, n, sizeof(int), compareint);
     	int k=0;
     	for(k = 0; k < n; k++){
     		if(swordPower[k] < anistrength[k]) {

@@ -41,7 +41,7 @@ int MaxProductCutDP(int n) {
     return dp[n];
 }
 
-int main4() {
+int mainss() {
     cout<<"The Recursive solution is " << MaxProductCutRecursive(10)<< endl;
     cout<<"The Dynamic Programming solution is " << MaxProductCutDP(10)<< endl;
     return 0;
