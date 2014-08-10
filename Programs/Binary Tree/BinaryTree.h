@@ -39,6 +39,8 @@ public:
     static int createLevelOrderLinkedList(node * root);
     static int inOrderSuccesor(node * root, int data);
     static bool checkIfOneTreeExistsinOther(node * tree1, node * tree2);
+    static int findMaxSumPath(node * root);
+    static void printTreeVertical(node * root);
 };
 
 #endif /* defined(__TestApps__BinaryTree__) */

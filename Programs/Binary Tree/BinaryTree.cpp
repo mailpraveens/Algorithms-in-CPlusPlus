@@ -293,4 +293,67 @@ bool BinaryTree::checkIfOneTreeExistsinOther(node * tree1, node * tree2) {
     return false;
 }
 
+// Idea is to get max from left, and right and add to root
+// Also check if left is max than right, and get overall max
+int findOverallMax(node * root, int * res){
+    if (!root) {
+        return 0;
+    }
+    
+    int leftMax = findOverallMax(root->left, res);
+    int rightMax = findOverallMax(root->right, res);
+    int currMax = std::max((leftMax + rightMax + root->data), std::max(leftMax, rightMax));
+    if (*res < currMax) {
+        *res = currMax;
+    }
+    
+    return max(leftMax, rightMax) + root->data;
+}
+
+int BinaryTree::findMaxSumPath(node * root){
+    int res = 0;
+    findOverallMax(root, &res);
+    return res;
+    
+}
+
+void findHorizontalDistance(node * root, int *left, int * right, int hd){
+    if (root == NULL) {
+        return;
+    }
+    if (*left>hd) {
+        *left = hd;
+    }
+    if (*right < hd) {
+        *right = hd;
+    }
+    
+    findHorizontalDistance(root->left, left, right, hd-1);
+    findHorizontalDistance(root->right, left, right, hd+1);
+}
+
+void printAtLevel(node * root, int level, int hd){
+    if (!root) {
+        return;
+    }
+    if (level == hd) {
+        cout<< root-> data;
+    }
+    printAtLevel(root->left, level, hd-1);
+    printAtLevel(root->right, level, hd+1);
+    
+}
+
+void BinaryTree::printTreeVertical(node * root){
+    int leftMax = 0;
+    int rightMax = 0;
+    int horizontalDist = 0;
+    findHorizontalDistance(root, &leftMax, &rightMax,  horizontalDist);
+    // Now using left and right max print the values
+    for (int i = leftMax; i < rightMax; i++) {
+        printAtLevel(root, i, 0);
+    }
+    
+}
+
 
