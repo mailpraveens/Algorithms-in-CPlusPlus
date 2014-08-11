@@ -152,8 +152,8 @@ void testStringFunctions(){
     char str[] = "geeksforgeeks";
     cout << "The inplace removal of duplicates is :"<< removeDuplicates(str)<< endl;
     printDelimiter();
-    cout << "The Excel Column Conversion is :"<< getExcelColumnName(26)<< endl;
-    cout << "The Excel Column Conversion is :"<< getExcelColumnName(702)<< endl;
+    cout << "The Excel Column Conversion is :"<< getExcelColumnName(1)<< endl;
+    cout << "The Excel Column Conversion is :"<< getExcelColumnName(53)<< endl;
     cout << "The Excel Column Conversion is :"<< getExcelColumnName(705)<< endl;
     printDelimiter();
     countDecodings("1234");
@@ -175,7 +175,7 @@ void testStringFunctions(){
     
 }
 
-int main7(int argc, const char * argv[])
+int main(int argc, const char * argv[])
 {
     printDelimiter();
     testGraph();

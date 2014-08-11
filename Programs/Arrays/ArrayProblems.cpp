@@ -110,4 +110,18 @@ void allCombinationsOfKeyPad(int *num, int n) {
     allCombinationsOfKeyPadUtil(num, 0, n, results);
 }
 
-
+//Code to Get a Duplicated Number in an Array
+int findDuplicatesInArray(int * a, int n){
+    for (int i =0; i < n; i++) {
+        while (a[i] != i) {
+            if (a[i] == a[a[i]]) {
+                return a[i];
+            }
+            int temp = a[i];
+            a[i] = a[a[i]];
+            a[a[i]] = temp;
+        }
+    }
+    return -1;
+    
+}

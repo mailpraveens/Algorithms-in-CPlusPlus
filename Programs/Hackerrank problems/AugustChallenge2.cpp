@@ -24,7 +24,7 @@ long long lcm(long long n1, long long n2) {
     return (n1*n2/temp1);
 }
 
-int main()
+int mainAC2()
 {
     long long testcases = 0;
     cin >> testcases;
