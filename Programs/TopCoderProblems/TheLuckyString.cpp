@@ -55,7 +55,7 @@ void wordBreakUtil(string str, int size, string result)
     }      //end for
 }//end function
 
-int main()
+int mainls()
 {
     cout << "First Test:\n";
     wordBreak("iloveicecreamandmango");
