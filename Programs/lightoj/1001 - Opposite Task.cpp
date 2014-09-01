@@ -10,7 +10,7 @@
 #include <stdlib.h>     /* srand, rand */
 using namespace std;
 
-int main() {
+int Opposite() {
 	int tests;
 	cin>>tests;
 	long n,m;
@@ -27,4 +27,5 @@ int main() {
 		cout<< n  << " " << m-n << endl;
 		tests--;
 	}
+    return 0;
 }

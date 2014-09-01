@@ -12,21 +12,24 @@ using namespace std;
 
 int TapeEquilibrium(vector<int> &A) {
     // write your code in C++11
+    // write your code in C++11
     vector <int> B;
-    int min = 0;
+    int min;
     B.push_back(A[0]);
-    min = A[0];
     int n = A.size();
-    for(int i = 1 ; i < n ; i++ ){
+    for(int i = 1 ; i < n ; i++ ) {
         B.push_back(B[i-1] + A[i]);
     }
     for( int i = n - 1 ; i > 0  ; i-- ) {
         A[i-1] += A[i];
     }
+    min = abs(B[0] - A[1]);
     
-    for( int i = 0 ; i < n  ; i++ ) {
-        if(abs(B[i] - A[i+1]) < min) {
-            min = abs(B[i] - A[i+1]);
+    for( int i = 0 ; i < n -1  ; i++ ) {
+        int temp =  abs(B[i] - A[i+1]);
+        if(temp <= min) {
+            
+            min = temp;
         }
     }
     
